@@ -11,7 +11,7 @@ class PostListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final postProvider = Provider.of<PostProvider>(context);
 
-    // Error State
+    
     if (postProvider.hasError) {
       return Scaffold(
         appBar: AppBar(
@@ -70,7 +70,7 @@ class PostListScreen extends StatelessWidget {
           final isRead = postProvider.readPosts.contains(post.id);
           final timerController = postProvider.getTimerController(post.id);
 
-          // Start timer if not already started
+          // Start timer if not already starts
           if (timerController == null) {
             postProvider.startTimer(post.id);
           }
